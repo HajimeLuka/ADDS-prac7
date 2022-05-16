@@ -13,8 +13,7 @@ using namespace std;
 int main(){
     string input;
     vector<int> userInput;
-    vector<int> resultVectorB;
-    vector<int> resultVectorQ;
+
     vector<int> resultVector;
     bool SearchResult;
 
@@ -48,22 +47,22 @@ int main(){
     }
 
     //SORT
-    resultVectorB = bSort->sort(userInput);
+    resultVector = bSort->sort(userInput);
     // resultVectorQ = qSort->sort(userInput);
 
 
     //SEARCH
-    SearchResult = search->search(resultVectorB, 1);
+    SearchResult = search->search(resultVector, 1);
 
     string res;
 
     if (SearchResult==1){
-        res = "true";
+        res = "true ";
     }
 
 
     if (SearchResult==0){
-        res = "false";
+        res = "false ";
     }
 
 
@@ -71,10 +70,10 @@ int main(){
     // //     cout<<resultVectorB[i]<<" ";
     // // }
 
-    cout<<res<<" ";
+    cout<<res;
 
-    for(int i=0; i<resultVectorB.size(); i++){
-        cout<<resultVectorB[i]<<" ";
+    for(int i=0; i<resultVector.size(); i++){
+        cout<<resultVector[i]<<" ";
     }
 
 

@@ -6,9 +6,6 @@
 
 using namespace std;
 
-BubbleSort::BubbleSort():Sort(){
-
-}
 
 vector<int> BubbleSort::sort(vector<int> list){
     // vector<int> new_list;

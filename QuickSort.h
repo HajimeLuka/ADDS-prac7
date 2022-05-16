@@ -8,8 +8,7 @@
 class QuickSort: public Sort{
 public:
 
-    QuickSort();
-    virtual std::vector<int> sort(std::vector<int> list);
+    std::vector<int> sort(std::vector<int> list);
 
 };
 

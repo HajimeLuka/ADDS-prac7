@@ -7,9 +7,6 @@
 using namespace std;
 
 
-QuickSort::QuickSort():Sort(){
-
-}
 
 vector<int> QuickSort::sort(vector<int> list){
 
