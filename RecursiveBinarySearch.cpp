@@ -18,41 +18,34 @@ bool RecursiveBinarySearch::search(vector<int> list, int x){
 
     int mid = (upper+lower)/2;
 
-    if(lower<=length){
+    if(lower>0){
 
-        if (list[mid] == x){
-            // cout<<"hi"<<endl;
+        if (x == list[mid]){
             return true;
         }
 
         //search left subarray
         else if (list[mid] > x){
-            // cout<<"hello"<<endl;
 
-            for (int i=0; i<mid+1; i++){
+            for (int i=0; i<mid-1; i++){
                 newList.push_back(list[i]);
             }
 
-            search(newList, x);
+            return search(newList, x);
         }
 
         //search in the right subarray
-
         else if (list[mid] < x){
 
-            // cout<<"PAIN";
-
-            for (int i=mid-1; i<upper; i++){
+            for (int i=mid+1; i<length; i++){
 
                 newList.push_back(list[i]);
-                cout<<newList[i]<<endl;
 
             }
 
+            return search(newList, x);
 
-            search(newList, x);
-
-    }
+        }
 
     }
 
