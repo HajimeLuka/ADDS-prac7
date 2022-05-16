@@ -15,6 +15,7 @@ int main(){
     vector<int> userInput;
     vector<int> resultVectorB;
     vector<int> resultVectorQ;
+    vector<int> resultVector;
     bool SearchResult;
 
 
@@ -48,11 +49,11 @@ int main(){
 
     //SORT
     resultVectorB = bSort->sort(userInput);
-    resultVectorQ = qSort->sort(userInput);
+    // resultVectorQ = qSort->sort(userInput);
 
 
     //SEARCH
-    SearchResult = search->search(userInput, 1);
+    SearchResult = search->search(resultVectorB, 1);
 
     string res;
 
@@ -66,14 +67,14 @@ int main(){
     }
 
 
-    // for(int i=0; i<resultVectorB.size(); i++){
-    //     cout<<resultVectorB[i]<<" ";
-    // }
+    // // for(int i=0; i<resultVectorB.size(); i++){
+    // //     cout<<resultVectorB[i]<<" ";
+    // // }
 
     cout<<res<<" ";
 
-    for(int i=0; i<resultVectorQ.size(); i++){
-        cout<<resultVectorQ[i]<<" ";
+    for(int i=0; i<resultVectorB.size(); i++){
+        cout<<resultVectorB[i]<<" ";
     }
 
 

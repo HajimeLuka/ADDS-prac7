@@ -10,23 +10,63 @@ RecursiveBinarySearch::RecursiveBinarySearch(){
 
 bool RecursiveBinarySearch::search(vector<int> list, int x){
     int length = list.size();
-    int start = 0;
-    vector<int> List = list;
+
+    int lower = 0;
+    int upper = length-1;
+
     vector<int> newList;
 
-    int mid = (start+length)/2;
+    int mid = (upper+lower)/2;
 
-    if(start<=list.size()){
+    cout<<mid<<endl;
+
+
+    // if (list[mid] == x){
+    //     cout<<"hi";
+    //     return true;
+
+    // }
+
+    // if (lower>upper){
+    //     return false;
+    // }
+
+    // else if (list[mid] < x){
+    //     cout<<"hello";
+
+    //     for (int i=lower; i<mid-1; i++){
+    //         newList.push_back(list[i]);
+    //     }
+
+    //     search(newList, x);
+    // }
+
+
+    // else if (list[mid] > x){
+    //     cout<<"PAIN";
+    //     for (int i=mid+1; i<upper; i++){
+
+    //         newList.push_back(list[i]);
+    //     }
+
+    //     search(newList, x);
+    // }
+
+    if(lower<=length){
 
         if (list[mid] == x){
-        return true;
+            cout<<"hi"<<endl;
+            return true;
         }
 
-
         //search left subarray
-        if (list[mid] > x){
-            for (int i=0; i<mid-1; i++){
-                newList[i]=List[i];
+        else if (list[mid] > x){
+            cout<<"hello"<<endl;
+
+            for (int i=0; i<mid+1; i++){
+                newList.push_back(list[i]);
+                cout<<newList[i];
+
             }
 
             search(newList, x);
@@ -34,19 +74,24 @@ bool RecursiveBinarySearch::search(vector<int> list, int x){
 
         //search in the right subarray
 
-        if (list[mid] < x){
-            for (int i=mid+1; i<length; i++){
-                newList[i-mid-1]=List[i];
+        else if (list[mid] < x){
+
+            cout<<"PAIN";
+
+            for (int i=mid-1; i<upper; i++){
+
+                newList.push_back(list[i]);
+                cout<<newList[i]<<endl;
+
             }
 
+
             search(newList, x);
-    }
 
-    else{
-        return false;
     }
 
     }
 
+    return false;
 
 }
