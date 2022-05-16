@@ -18,7 +18,7 @@ bool RecursiveBinarySearch::search(vector<int> list, int x){
 
     int mid = (upper+lower)/2;
 
-    if(lower>0){
+    while(lower<length){
 
         if (x == list[mid]){
             return true;
